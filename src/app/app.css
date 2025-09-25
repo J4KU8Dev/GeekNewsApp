@@ -1,0 +1,18 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    background-color: #0B0B0B;
+    width: 40rem;
+    min-height: 45rem;
+    padding: 2rem;
+    border: 1px solid #83817C;
+    border-radius: 20px;
+}
+hr{
+    color: #83817C;
+    background-color: #83817C;
+    height: 0.5px;
+    width: 100%;
+}

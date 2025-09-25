@@ -1,0 +1,23 @@
+:root{
+    --green: #346C42;
+    --black: #0B0B0B;
+    --gray: #83817C;
+    --grey: #222125;
+}
+.container{
+    display: flex;
+    align-items: center;
+}
+.container h1{
+    color: #346C42;
+}
+.container button{
+    margin-left: 50%;
+    background: none;
+    color: #83817C;
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 400;
+}

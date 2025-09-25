@@ -1,0 +1,42 @@
+[
+    {
+        "id":1,
+        "title":"New AI Technology Takes the Industry by Storm",
+        "description":"A breakthrough in artificial intelligence is set to revolutionize the tech industry.",
+        "imageUrl":"https:\/\/example.com\/images\/ai_tech.jpg",
+        "url":"https:\/\/example.com\/news\/ai_tech",
+        "category":"Tech"
+    },
+    {
+        "id":2,
+        "title":"Intel Unveils Latest Processor with Impressive Performance",
+        "description":"The new processor boasts exceptional speed and efficiency.",
+        "imageUrl":"https:\/\/example.com\/images\/intel_chip.jpg",
+        "url":"https:\/\/example.com\/news\/intel_chip",
+        "category":"Tech"
+    },
+    {
+        "id":3,
+        "title":"Top 10 WordPress Plugins for Enhancing Your Website",
+        "description":"Discover the best plugins to take your WordPress site to the next level.",
+        "imageUrl":"https:\/\/example.com\/images\/wordpress_plugins.jpg",
+        "url":"https:\/\/example.com\/news\/wordpress_plugins",
+        "category":"Web Development"
+    },
+    {
+        "id":4,
+        "title":"Cyberpunk 2077: New Expansion Pack Released",
+        "description":"The highly anticipated expansion brings new storylines and features.",
+        "imageUrl":"https:\/\/example.com\/images\/cyberpunk.jpg",
+        "url":"https:\/\/example.com\/news\/cyberpunk",
+        "category":"Games"
+    },
+    {
+        "id":5,
+        "title":"Mars Rover Discovers Signs of Ancient Life",
+        "description":"NASA's rover sends back evidence of microbial life on Mars.",
+        "imageUrl":"https:\/\/example.com\/images\/mars_rover.jpg",
+        "url":"https:\/\/example.com\/news\/mars_rover",
+        "category":"Science"
+    }
+]
