@@ -1,6 +1,5 @@
 <div class="menu">
-    <button [class.active]="clicked">TECH</button>
-    <button>GAMES</button>
-    <button>SCI-FI</button>
-    <button>AI</button>
+    @for (category of categories; track $index) {
+        <app-category-component [categoryName]="category" (category)="onSelectedCategory($event)" />
+    }
 </div>
