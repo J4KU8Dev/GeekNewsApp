@@ -7,10 +7,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './category-component.css'
 })
 export class CategoryComponent {
+  @Input({required: true}) checked!: boolean;
   @Input({required: true}) categoryName!: string;
-  @Output() category = new EventEmitter();
+  @Output() category = new EventEmitter<string>();
 
-  select() {
-    this.category.emit();
-  }
+  onSelectedCategory() {
+    this.category.emit(this.categoryName);
+}
 }

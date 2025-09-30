@@ -1,5 +1,18 @@
 <div class="menu">
     @for (category of categories; track $index) {
-        <app-category-component [categoryName]="category" (category)="onSelectedCategory($event)" />
+        <app-category-component [categoryName]="category" (category)="onSelectedCategory($event)" [checked]="category===selectedCategory"/>
     }
 </div>
+
+<div class="search-container">
+    <input type="search" placeholder="Search...">
+</div>
+
+@if(selectedCategory){
+    <div class="news">
+        
+    </div>
+}
+@else{
+    <p style="color: white;">Please select category</p>
+}

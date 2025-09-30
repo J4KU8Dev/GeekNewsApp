@@ -5,3 +5,20 @@
     gap: 7rem;
     justify-content: center;
 }
+.search-container{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.search-container input{
+    outline: none;
+    border: 1px solid #7C7C7C;
+    background-color: #100E0F;
+    color: #7C7C7C;
+    width: 90%;
+    text-align: left;
+    font-size: large;
+    border-radius: 5px;
+    padding: .8rem;
+}

@@ -1,1 +1,3 @@
-<button [class.active]="select">{{categoryName}}</button>
+<button [class.active]="checked" (click)="onSelectedCategory()">
+  {{ categoryName }}
+</button>
