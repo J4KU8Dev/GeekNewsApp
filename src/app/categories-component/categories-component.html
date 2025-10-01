@@ -1,5 +1,9 @@
 <div class="container">
-    
-    <h2>{{News.title}}</h2>
-    <p>{{News.description}}</p>
+    <div class="image-container">
+        <img [src]="News.imageURL" [alt]="News.category">
+    </div>
+    <div class="data-container">
+        <h2>{{News.title}}</h2>
+        <p>{{News.description}}</p>
+    </div>
 </div>

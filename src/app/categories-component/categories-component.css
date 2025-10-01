@@ -1,6 +1,21 @@
-.container h2{
-    color: #969594;
+.container{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
 }
-.container p{
+.image-container{
+    max-width: 200px;
+    height: auto;
+}
+.data-container h2{
+    color: #969594;
+    text-align: left;
+}
+.data-container{
     color: #AAA8A7;
+}
+img{
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
 }
