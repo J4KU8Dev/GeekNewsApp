@@ -26,5 +26,9 @@ export class MenuComponent {
   get SelectedNews() {
     return this.data.filter((news) => news.category === this.selectedCategory );
   }
+
+  test(content: string) {
+    console.log(content);
+  }
   
 }
