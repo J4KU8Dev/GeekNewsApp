@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [style.background]="isDark ? '#0B0B0B' : 'white' ">
     <h1>GEEK NEWS</h1>
-    <button>DARK MODE</button>
+    <button (click)="changeTheme()" [textContent]="isDark ? 'LIGHT MODE' : 'DARK MODE'">DARK MODE</button>
 </div>

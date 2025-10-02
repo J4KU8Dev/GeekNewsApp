@@ -4,6 +4,7 @@ import { news } from '../categories.list';
 import { CategoriesComponent } from "../categories-component/categories-component";
 import type { newsModel } from '../news.model';
 import { FormsModule } from '@angular/forms';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-menu-component',
@@ -18,17 +19,25 @@ export class MenuComponent {
   filteredNews:newsModel[] = [];
   searchText="";
 
+  constructor(private commonService: ThemeService) {}
 
   onSelectedCategory(id: string) {
     this.selectedCategory = id;
   }
 
-  get SelectedNews() {
-    return this.data.filter((news) => news.category === this.selectedCategory );
+  get SelectedNews(): newsModel[] {
+    return this.data.filter(n =>
+      n.category === this.selectedCategory &&
+      (
+        !this.searchText || 
+        n.title.toLowerCase().includes(this.searchText.toLowerCase()) ||
+        n.description.toLowerCase().includes(this.searchText.toLowerCase())
+      )
+    );
   }
 
   test(content: string) {
-    console.log(content);
+    return this.data.filter((news) => news.category || news.description ===content);
   }
   
 }

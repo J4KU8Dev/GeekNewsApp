@@ -5,7 +5,7 @@
 </div>
 
 <div class="search-container">
-    <input type="search" name="search" #search autocomplete="off" placeholder="Search..."  (input)="test(search.value)">
+    <input type="search" name="search" #search autocomplete="off" placeholder="Search..."  [(ngModel)]="searchText">
 </div>
 
 @if(selectedCategory){
