@@ -21,3 +21,9 @@
     cursor: pointer;
     font-weight: 400;
 }
+
+@media (max-width: 45rem){
+    .container button{
+        margin-left: 40%;
+    }
+}

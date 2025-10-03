@@ -22,3 +22,30 @@
     border-radius: 5px;
     padding: .8rem;
 }
+
+@media (max-width: 45rem){
+    html{
+        font-size: 50%;
+    }
+    .menu{
+        gap: 5rem;
+    }
+}
+
+@media (max-width: 35rem){
+    html{
+        font-size: 40%;
+    }
+    .menu{
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 28rem){
+    html{
+        font-size: 35%;
+    }
+    .menu{
+        gap: 1.5rem;
+    }
+}

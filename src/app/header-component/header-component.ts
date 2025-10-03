@@ -7,9 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './header-component.css'
 })
 export class HeaderComponent {
-  isDark:boolean=true;
-
-  changeTheme(){
-    this.isDark=!this.isDark;
-  }
+  
 }
