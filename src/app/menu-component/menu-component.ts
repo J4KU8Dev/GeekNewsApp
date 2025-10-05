@@ -5,6 +5,8 @@ import { CategoriesComponent } from "../categories-component/categories-componen
 import type { newsModel } from '../news.model';
 import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../theme.service';
+import { ApiService } from '../api-service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-menu-component',
@@ -19,21 +21,22 @@ export class MenuComponent {
   filteredNews:newsModel[] = [];
   searchText="";
 
-  constructor(private commonService: ThemeService) {}
+  constructor(private commonService: ThemeService, private api: ApiService) {}
 
   onSelectedCategory(id: string) {
     this.selectedCategory = id;
   }
 
-  get SelectedNews(): newsModel[] {
-    return this.data.filter(n =>
-      n.category === this.selectedCategory &&
-      (
-        !this.searchText || 
-        n.title.toLowerCase().includes(this.searchText.toLowerCase()) ||
-        n.description.toLowerCase().includes(this.searchText.toLowerCase())
-      )
-    );
+  get SelectedNews(): Observable<newsModel[]> {
+    return this.api.getPostByCategory(this.selectedCategory)
+    // return this.data.filter(n =>
+    //   n.category === this.selectedCategory &&
+    //   (
+    //     !this.searchText || 
+    //     n.title.toLowerCase().includes(this.searchText.toLowerCase()) ||
+    //     n.description.toLowerCase().includes(this.searchText.toLowerCase())
+    //   )
+    // );
   }
 
   test(content: string) {

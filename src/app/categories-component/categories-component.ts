@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { newsModel } from '../news.model';
 
 @Component({
@@ -9,4 +9,5 @@ import { newsModel } from '../news.model';
 })
 export class CategoriesComponent {
   @Input({required: true}) News!: newsModel;
+
 }

@@ -13,6 +13,6 @@ export class ApiService {
     return this.http.get(`${this.apiUrl}/newsList`);
   }
   getPostByCategory(category: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/newsList/${category}`);
+    return this.http.get(`${this.apiUrl}/newsList?category=${category}`);
   }
 }
