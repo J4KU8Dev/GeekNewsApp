@@ -10,7 +10,7 @@
 
 @if(selectedCategory){
     <div class="news">
-        @for (element of SelectedNews; track $index) {
+        @for (element of response; track $index) {
             <app-categories-component [News]="element"/>
         }
     </div>

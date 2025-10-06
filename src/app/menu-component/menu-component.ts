@@ -6,7 +6,6 @@ import type { newsModel } from '../news.model';
 import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../theme.service';
 import { ApiService } from '../api-service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-menu-component',
@@ -16,6 +15,7 @@ import { Observable } from 'rxjs';
 })
 export class MenuComponent {
   data = news;
+  public response: any;
   categories=["TECH","GAMES","SCI-FI","AI"]
   selectedCategory:string = ""
   filteredNews:newsModel[] = [];
@@ -25,10 +25,18 @@ export class MenuComponent {
 
   onSelectedCategory(id: string) {
     this.selectedCategory = id;
+    this.SelectedNews();
   }
 
-  get SelectedNews(): Observable<newsModel[]> {
-    return this.api.getPostByCategory(this.selectedCategory)
+  public SelectedNews() {
+    this.api.getPostByCategory(this.selectedCategory).subscribe((data) => {
+      this.response = data;
+      this.data.filter(n =>
+        !this.searchText || 
+        n.title.toLowerCase().includes(this.searchText.toLowerCase()) ||
+        n.description.toLowerCase().includes(this.searchText.toLowerCase()));
+        console.log(data);
+    })
     // return this.data.filter(n =>
     //   n.category === this.selectedCategory &&
     //   (
