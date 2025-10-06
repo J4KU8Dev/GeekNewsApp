@@ -15,10 +15,10 @@ import { ApiService } from '../api-service';
 })
 export class MenuComponent {
   data = news;
-  public response: any;
+  public allNews:newsModel[] = [];
+  public response:newsModel[] = [];
   categories=["TECH","GAMES","SCI-FI","AI"]
   selectedCategory:string = ""
-  filteredNews:newsModel[] = [];
   searchText="";
 
   constructor(private commonService: ThemeService, private api: ApiService) {}
@@ -29,26 +29,19 @@ export class MenuComponent {
   }
 
   public SelectedNews() {
-    this.api.getPostByCategory(this.selectedCategory).subscribe((data) => {
-      this.response = data;
-      this.data.filter(n =>
-        !this.searchText || 
-        n.title.toLowerCase().includes(this.searchText.toLowerCase()) ||
-        n.description.toLowerCase().includes(this.searchText.toLowerCase()));
-        console.log(data);
+    this.api.getPostByCategory(this.selectedCategory).subscribe((data: newsModel[]) => {
+      this.allNews = data;
+      this.applyFilter();
     })
-    // return this.data.filter(n =>
-    //   n.category === this.selectedCategory &&
-    //   (
-    //     !this.searchText || 
-    //     n.title.toLowerCase().includes(this.searchText.toLowerCase()) ||
-    //     n.description.toLowerCase().includes(this.searchText.toLowerCase())
-    //   )
-    // );
   }
-
-  test(content: string) {
-    return this.data.filter((news) => news.category || news.description ===content);
+  applyFilter() {
+    if(this.searchText) {
+      const lowerSearch = this.searchText.toLowerCase();
+      this.response = this.allNews.filter(n => n.title.toLowerCase().includes(lowerSearch) || n.description.toLowerCase().includes(this.searchText));
+    }
+    else{
+      this.response = [...this.allNews];
+    }
   }
   
 }
